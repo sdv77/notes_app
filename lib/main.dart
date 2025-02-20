@@ -19,10 +19,10 @@ class NotesApp extends StatelessWidget {
 
 class NotesScreen extends StatefulWidget {
   @override
-  _NotesScreenState createState() => _NotesScreenState();
+  NotesScreenState createState() => NotesScreenState();
 }
 
-class _NotesScreenState extends State<NotesScreen> {
+class NotesScreenState extends State<NotesScreen> {
   TextEditingController _textController = TextEditingController();
 
   List<String> notes = [];
