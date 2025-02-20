@@ -23,18 +23,13 @@ class NotesScreen extends StatefulWidget {
 }
 
 class _NotesScreenState extends State<NotesScreen> {
-  // Контроллер для управления текстовым полем
   TextEditingController _textController = TextEditingController();
 
-  // Список для хранения заметок
   List<String> notes = [];
 
-  // Метод для добавления заметки
   void _addNote() {
     setState(() {
-      // Добавляем текст из текстового поля в список заметок
       notes.add(_textController.text);
-      // Очищаем текстовое поле после добавления
       _textController.clear();
     });
   }
@@ -49,7 +44,6 @@ class _NotesScreenState extends State<NotesScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Поле для ввода текста
             TextField(
               controller: _textController,
               decoration: InputDecoration(
@@ -58,13 +52,11 @@ class _NotesScreenState extends State<NotesScreen> {
               ),
             ),
             SizedBox(height: 16.0),
-            // Кнопка для добавления заметки
             ElevatedButton(
               onPressed: _addNote,
               child: Text('Сохранить'),
             ),
             SizedBox(height: 16.0),
-            // Список заметок
             Expanded(
               child: ListView.builder(
                 itemCount: notes.length,
